@@ -15,7 +15,7 @@ export type CaseRecord = {
 }
 
 export const runs = {
-  'v1.3': { status: 'BLOCKED', passRate: 72, passed: 18, failed: 6, review: 1, p0: 3, p1: 3, prompt: 'v12', model: 'Qwen 3.7 Plus', tool: 'v5', snapshot: 'market-data-20260630-v1', run: 'RUN-0629-013' },
+  'v1.3': { status: 'BLOCK', passRate: 72, passed: 18, failed: 6, review: 1, p0: 3, p1: 3, prompt: 'v12', model: 'Qwen 3.7 Plus', tool: 'v5', snapshot: 'market-data-20260630-v1', run: 'RUN-0629-013' },
   'v1.4': { status: 'PASS_WITH_WARNINGS', passRate: 96, passed: 24, failed: 1, review: 0, p0: 0, p1: 1, prompt: 'v13', model: 'Qwen 3.7 Plus', tool: 'v5', snapshot: 'market-data-20260630-v2', run: 'RUN-0630-021' },
 } as const
 
@@ -32,17 +32,17 @@ export const cases: CaseRecord[] = [
 export const navGroups = [
   { label: '评测', items: ['实验列表', '新建评测', '运行中', '评测报告'] },
   { label: '诊断', items: ['Case 详情', '反事实 Pair', '版本对比'] },
-  { label: '治理', items: ['Feedback Candidates', '测试集', '评测器', '回归集'] },
+  { label: '治理', items: ['用户反馈候选', '测试集', '评测器', '回归集'] },
 ]
 
 export const evaluators = [
-  ['E1', '规则与红线评测器', 'deterministic', '时间边界、字段约束、禁止行为与一票否决'],
-  ['E2', '事实与证据评测器', 'llm judge', '事实、数字、来源与指标口径'],
-  ['E3', 'KYC 使用评测器', 'llm judge', '关键 KYC 使用与干扰 KYC 识别'],
-  ['E4', '风险与适当性评测器', 'llm judge', '风险承受能力、期限与组合匹配'],
-  ['E5', '任务完成度评测器', 'llm judge', '实际动作是否满足任务'],
-  ['E6', '过程行为评测器', 'hybrid', '必须步骤、禁止步骤与条件步骤'],
-  ['E7', '反事实成对评测器', 'pair judge', '关键变量变化后的建议差异'],
-  ['E8', '热点上下文评测器', 'hybrid', '最新事件、时效与旧信息替代检查'],
-  ['E9', '隐私与最小必要数据评测器', 'hybrid', '非必要 KYC、敏感数据最小化、事实边界'],
+  ['E1', '规则与红线', '规则', '时间边界、字段约束、禁止行为与一票否决'],
+  ['E2', '事实与证据', '模型裁判', '事实、数字、来源与指标口径'],
+  ['E3', 'KYC使用', '模型裁判', '关键 KYC 使用与干扰 KYC 识别'],
+  ['E4', '风险与适当性', '模型裁判', '风险承受能力、期限与组合匹配'],
+  ['E5', '任务完成度', '模型裁判', '实际动作是否满足任务'],
+  ['E6', '过程行为', '混合', '必须步骤、禁止步骤与条件步骤'],
+  ['E7', '反事实成对评测', 'Pair 裁判', '关键变量变化后的建议差异'],
+  ['E8', '热点上下文', '混合', '最新事件、时效与旧信息替代检查'],
+  ['E9', '隐私与最小必要数据', '混合', '非必要 KYC、敏感数据最小化、事实边界'],
 ]

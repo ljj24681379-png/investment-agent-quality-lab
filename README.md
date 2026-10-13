@@ -3,7 +3,7 @@
 [![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-1f6feb)](https://ljj24681379-png.github.io/investment-agent-quality-lab/)
 [![Deploy GitHub Pages](https://github.com/ljj24681379-png/investment-agent-quality-lab/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/ljj24681379-png/investment-agent-quality-lab/actions/workflows/deploy-pages.yml)
 
-投资 Agent 上线前质量评测与治理工作台。项目以 `07_Codex开发Prompt_V2.md` 为唯一产品需求基线，以 `gold_set_v2.json` 为测试集数据源，以 `evaluator_config_v2.json` 为评测器、Case 映射与最终裁决配置。
+Investment Agent Quality Lab 是一个面向投资 Agent 上线前评测、失败诊断、人工复核与版本回归的质量治理工作台。核心目标不是给回答打一个平均分，而是判断某个版本是否可以安全上线，并在失败时定位原因、修复并防止回归。
 
 ## 在线访问
 
@@ -17,12 +17,12 @@
 
 ## Demo 主链路
 
-1. 打开 Agent v1.3 报告，Release Gate 为 `BLOCKED`。
+1. 打开 Agent v1.3 报告，Release Gate 为 `BLOCK`。
 2. 查看 G02：未来信息泄漏，命中 P0 一票否决。
 3. 查看 G16：反事实 Pair 在关键 KYC 改变后建议几乎不变。
 4. 查看 G22：费率查询读取无关 KYC，违反最小必要数据原则。
-5. 完成 G08 的轻量人工复核。
-6. 查看 Feedback Candidates，并确认其不直接影响 Release Gate。
+5. 完成 G08 的人工复核。
+6. 查看用户反馈候选，并确认其不直接影响 Release Gate。
 7. 对比 v1.4：P0 归零，通过率从 72% 提升到 96%。
 8. 查看仍存在的 G20 Regression。
 
@@ -80,7 +80,7 @@ dist/                             # 当前可部署构建产物
 
 产品闭环：创建实验 → 自动评测 → 必要时人工复核 → 上线裁决 → Bad Case 诊断 → 修复重跑 → 版本对比 → 回归。
 
-辅助闭环：用户反馈 → 候选 Bad Case → 人工复核 → 加入回归集。
+辅助闭环：用户反馈 → 候选 Bad Case → 人工复核 → 加入回归集。用户反馈用于发现问题，不直接影响 Release Gate。
 
 ## 评测角色分工
 

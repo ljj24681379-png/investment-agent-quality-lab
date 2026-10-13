@@ -12,7 +12,7 @@ React UI
   ├─ Case / Trace / Expected vs Actual
   ├─ Counterfactual Pair
   ├─ Human Review Drawer
-  ├─ Feedback Candidates
+  ├─ 用户反馈候选
   └─ Version Compare
         │
 Demo View Models (experiments.ts / feedbackCandidates.ts)

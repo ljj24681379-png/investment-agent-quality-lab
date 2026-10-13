@@ -24,3 +24,10 @@ Codex 用于：
 - 保留高信息密度、克制的 FinTech 内部工具视觉。
 - 仅对 G08 使用轻量 Review Drawer，不扩展复杂标注平台。
 - 通过 GitHub Pages 解决原 `chatgpt.site` 边缘访问限制。
+
+## 产品级打磨
+
+- AI 协助扫描页面中的英文残留、重复说明和过小辅助文字。
+- 人工确认保留 Agent、KYC、Prompt、Trace、Gold Set、Case、Pair、标准状态码等必要术语。
+- 只调整界面表达和信息层级，未改变 Gold Set、评测器映射、裁决规则或 Demo 主流程。
+- 使用 Edge 实际渲染检查报告首屏，并通过自动测试与生产构建复核结果。
